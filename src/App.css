@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: lightblue;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +37,67 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  padding: 5%;
+}
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5%;
+}
+
+.card {
+  width: 15%;
+  padding: 2%;
+  margin: 2%;
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: 2%;
+}
+
+.building-form {
+  background-color: gray;
+  margin: 0 24%;
+}
+
+.contribution-wrapper {
+  display: flex;
+  height: 60vh;
+}
+
+.contribution-wrapper button {
+  margin-left: 35%;
+  margin-top: 7%;
+  width: 2px;
+  height: 20px;
+}
+
+.left-side-form {
+  display: flex;
+  margin: 0 3% -55%;
+}
+
+.right-side-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 3%;
+}
+
+.right-side-form input {
+  margin: 0 2%;
+}
+
+.deleteButton {
+  background-color: red;
+  margin-left: 85%;
+}
+
+.successMsg {
+  color: green;
 }
