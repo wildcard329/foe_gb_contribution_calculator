@@ -43,6 +43,7 @@ function BuildingForm() {
         const submittedBuilding = BuildingCalculator.setTotalContributions(building.name, totals, contribution_multiplier, player_price)
         BuildingController.storeBuilding(submittedBuilding);
         setSuccessMsg(true);
+        setTimeout(function(){setSuccessMsg(false)}, 5000)
         setBuilding({
             name: null,
             total_fps: null,
@@ -53,7 +54,6 @@ function BuildingForm() {
             fifth_seat_contribution: 0,
             player_contribution: 0
         });
-        setTimeout(function(){setSuccessMsg(false)}, 5000)
     }
     return(
         <form onSubmit={handleSubmit} className='building-form'>
@@ -73,8 +73,8 @@ function BuildingForm() {
                     <Col>
                         <Card.Text>Contribution Multiplier</Card.Text>
                         {contribution_multiplier === 1.85 ?
-                        <div className='contribution-wrapper'><button size='sm' onClick={incrementContributionMultiplier}>+</button><Card.Text>{contribution_multiplier}</Card.Text></div> :
-                        <div className='contribution-wrapper'><button size='sm' onClick={decrementContributionMultiplier}>-</button><Card.Text>{contribution_multiplier}</Card.Text></div>}
+                        <div className='contribution-wrapper'><button type='button' onClick={incrementContributionMultiplier}>+</button><Card.Text>{contribution_multiplier}</Card.Text></div> :
+                        <div className='contribution-wrapper'><button type='button' onClick={decrementContributionMultiplier}>-</button><Card.Text>{contribution_multiplier}</Card.Text></div>}
                     </Col>
                 </Row>
                 <Row className='right-side-form'>
@@ -105,7 +105,7 @@ function BuildingForm() {
                 {!errorMsg && building.name && building.total_fps && <button type='submit'>Submit</button>}
             </Row>
             <Row>
-                {successMsg && <Card.Text className='successMsg'>{building.name} added!</Card.Text>}
+                {successMsg && <Card.Text className='successMsg'>Added!</Card.Text>}
             </Row>
         </form>
     )
